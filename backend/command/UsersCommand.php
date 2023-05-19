@@ -140,7 +140,11 @@ class UsersCommand extends CommandController
                 'success' => false,
                 'message' => 'The EMAIL not unique.',
             ];
-        } else if ($row['email'] !== null && $row['password'] !== null) {
+        } else if ($row['email'] !== null && empty($row['password']) !== true) {
+            $row['password'] = password_hash(
+                $row['password'],
+                PASSWORD_DEFAULT
+            );
             $obj     = $this->usersMapper->createObject($row);
             $success = $this->usersMapper->insert($obj);
             $data    = ['success' => $success];
@@ -166,18 +170,44 @@ class UsersCommand extends CommandController
         $row['firstname'] = ($this->params->get('firstname') ?? null);
         $row['lastname']  = ($this->params->get('lastname') ?? null);
         $row['email']     = ($this->params->get('email') ?? null);
+        $row['password']  = ($this->params->get('password') ?? null);
+
+        if (empty($row['password']) === false) {
+            $row['password'] = password_hash(
+                $row['password'],
+                PASSWORD_DEFAULT
+            );
+        } else {
+            unset($row['password']);
+        }
 
         if ($row['id'] !== -1 && $row['email'] !== null) {
-            $obj     = $this->usersMapper->createObject($row);
-            $success = $this->usersMapper->updateWithoutPassword($obj);
-            $data    = ['success' => $success];
+            $obj = $this->usersMapper->createObject($row);
+
+            if (isset($row['password']) === true) {
+                $success = $this->usersMapper->update($obj);
+            } else {
+                $success = $this->usersMapper->updateWithoutPassword($obj);
+            }
+
+            if ($success === true) {
+                $data = [
+                    'success' => $success,
+                    'message' => 'User data changed, re-login required',
+                ];
+            } else {
+                $data = [
+                    'success' => $success,
+                    'message' => 'Unknown error',
+                ];
+            }
         } else {
             $data = [
                 'success' => false,
                 'message' => 'The fields ID and EMAIL are required, but they are not filled.',
             ];
-        }
-
+        }//end if
+        
         $this->apiResponce($data);
     }
 
@@ -230,7 +260,6 @@ class UsersCommand extends CommandController
             'success' => true,
             'message' => 'OK',
             'JWT'     => $jwt,
-            'KEY'     => $jwtAuth->decodeJWT($jwt),
         ];
         $this->apiResponce($data);
     }
@@ -256,6 +285,17 @@ class UsersCommand extends CommandController
             return false;
         }
 
-        return true;
+        if ($payload->iss === 'Skeleton'
+            && $payload->nbf < time()
+            && $payload->exp > time()
+            && $user->get('email') === $payload->aud
+            && $user->get('email') === $payload->data->email
+            && $user->get('firstname') === $payload->data->firstname
+            && $user->get('lastname') === $payload->data->lastname
+        ) {
+                return true;
+        }
+
+        return false;
     }
 }
