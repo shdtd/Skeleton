@@ -1,0 +1,7 @@
+/vendor
+/phpunit.xml
+/phpstan.neon
+/phpcs.xml
+/.phpunit.result.cache
+/view/templates_c/*
+/view/cache/*
