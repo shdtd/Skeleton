@@ -50,6 +50,7 @@
     <exclude name="Squiz.WhiteSpace.FunctionSpacing"/>
     <exclude name="Squiz.Files.FileExtension.ClassFound"/>
     <exclude name="Squiz.ControlStructures.SwitchDeclaration.BreakIndent"/>
+    <exclude name="Squiz.PHP.DisallowComparisonAssignment"/>
     <!-- <exclude name=""/> -->
   </rule>
 

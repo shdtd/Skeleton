@@ -20,6 +20,7 @@ namespace Command;
 use Libraries\Controllers\CommandController;
 use Libraries\DataMapper\Model;
 use Libraries\JWTAuth;
+use Libraries\Registry;
 use Models\Users;
 use stdClass;
 
@@ -51,7 +52,7 @@ class UsersCommand extends CommandController
      */
     protected function init(): void
     {
-        $this->usersMapper = new Users();
+        $this->usersMapper = $this->reg->getUserMapper();
     }
 
     /**
@@ -258,7 +259,7 @@ class UsersCommand extends CommandController
 
         $data = [
             'success' => true,
-            'message' => 'OK',
+            'message' => 'Access granted',
             'JWT'     => $jwt,
         ];
         $this->apiResponce($data);
@@ -269,17 +270,22 @@ class UsersCommand extends CommandController
      *
      * @return boolean
      */
-    public function apiCheckToken(): bool
+    public static function apiCheckToken(): bool
     {
+        $reg     = Registry::instance();
         $jwtAuth = new JWTAuth();
-        $jwt     = $this->params->get('jwt');
+        $jwt     = $reg->getRequest()->getParameters()->get('jwt');
+        if (empty($jwt) === true) {
+            return false;
+        }
+
         $payload = $jwtAuth->decodeJWT($jwt);
 
         if (($payload instanceof stdClass) === false) {
             return false;
         }
 
-        $user = $this->usersMapper->findByID($payload->data->id);
+        $user = $reg->getUserMapper()->findByID($payload->data->id);
 
         if (($user instanceof Model) === false) {
             return false;

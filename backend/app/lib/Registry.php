@@ -16,12 +16,14 @@ declare(strict_types=1);
 
 namespace Libraries;
 
+use Command\UsersCommand;
 use Libraries\Controllers\AppController;
 use Libraries\DataMapper\ModelCollection;
 use Libraries\DataMapper\ModelMapper;
 use Libraries\Errors\AppException;
 use Libraries\Route\RouteCollection;
 use Libraries\Requests\Request;
+use Models\Users;
 
 /**
  * Registry class
@@ -95,9 +97,23 @@ class Registry
     /**
      * Description
      *
+     * @var Users $usersMapper
+     */
+    private Users $usersMapper;
+
+    /**
+     * Description
+     *
      * @var array<string,ModelCollection> $modelCollections
      */
     private array $modelCollections;
+
+    /**
+     * Description
+     *
+     * @var object $access
+     */
+    private object $access;
 
     /**
      * Description
@@ -407,5 +423,45 @@ class Registry
     public function setCommands(Config $commands): void
     {
         $this->commands = $commands;
+    }
+
+    /**
+     * UserMapper
+     *
+     * @return Users
+     */
+    public function getUserMapper(): Users
+    {
+        if (isset($this->usersMapper) === false) {
+            $this->usersMapper = new Users();
+        }
+
+        return $this->usersMapper;
+    }
+
+    /**
+     * Access class
+     *
+     * @return object
+     */
+    public function getAccess()
+    {
+        if (isset($this->access) === false) {
+            $this->access = new class {
+                /**
+                 * Sets private content
+                 *
+                 * @return void
+                 */
+                public function lock(): void
+                {
+                    if (UsersCommand::apiCheckToken() === false) {
+                        die('Access denied');
+                    }
+                }
+            };
+        }
+
+        return $this->access;
     }
 }
