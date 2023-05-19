@@ -34,7 +34,7 @@ Route::group(
     }
 );
 
-Route::get('/', IndexCommand::class, 'index', 'JWT');
+Route::get('/', IndexCommand::class, 'index');
 Route::get('/<one>/<two>/<three>/', IndexCommand::class, 'query');
 Route::get('/none/', IndexCommand::class, 'index');
 Route::get('/none/<index>/', IndexCommand::class, 'two');
@@ -43,16 +43,16 @@ Route::get('/none/podvoh/<id>/', IndexCommand::class, 'podvoh');
 Route::get('/user/<name>/<fname>/', IndexCommand::class, 'index');
 Route::get('/animal/<type>/', IndexCommand::class, 'animal');
 Route::get('/animal/fish/', IndexCommand::class, 'fish');
-/* Not work */
+/* TODO: Not work */
 Route::get('/article/<id>/', ArticleCommand::class, 'findByID');
 /* Routing table for a Articles model */
 Route::group(
     'article',
     function () {
         Route::get('/', ArticleCommand::class, 'select');
-        Route::post('/', ArticleCommand::class, 'create');
-        Route::put('/', ArticleCommand::class, 'update');
-        Route::delete('/', ArticleCommand::class, 'delete');
+        Route::post('/', ArticleCommand::class, 'create', 'JWT');
+        Route::put('/', ArticleCommand::class, 'update', 'JWT');
+        Route::delete('/', ArticleCommand::class, 'delete', 'JWT');
     }
 );
 /* Routing table for a News model */
@@ -60,31 +60,31 @@ Route::group(
     'news',
     function () {
         Route::get('/', NewsCommand::class, 'select');
-        Route::post('/', NewsCommand::class, 'create');
-        Route::put('/', NewsCommand::class, 'update');
-        Route::delete('/', NewsCommand::class, 'delete');
+        Route::post('/', NewsCommand::class, 'create', 'JWT');
+        Route::put('/', NewsCommand::class, 'update', 'JWT');
+        Route::delete('/', NewsCommand::class, 'delete', 'JWT');
     }
 );
 /* Routing table for a Items model */
 Route::group(
     'items',
     function () {
-        Route::get('/', ItemsCommand::class, 'select');
-        Route::post('/', ItemsCommand::class, 'create');
-        Route::put('/', ItemsCommand::class, 'update');
-        Route::delete('/', ItemsCommand::class, 'delete');
+        Route::get('/', ItemsCommand::class, 'select', 'JWT');
+        Route::post('/', ItemsCommand::class, 'create', 'JWT');
+        Route::put('/', ItemsCommand::class, 'update', 'JWT');
+        Route::delete('/', ItemsCommand::class, 'delete', 'JWT');
     }
 );
 /* Routing table for a Users model */
 Route::group(
     'users',
     function () {
-        Route::get('/', UsersCommand::class, 'select');
-        Route::post('/', UsersCommand::class, 'create');
-        Route::put('/', UsersCommand::class, 'update');
-        Route::delete('/', UsersCommand::class, 'delete');
+        Route::get('/', UsersCommand::class, 'select', 'JWT');
+        Route::post('/', UsersCommand::class, 'create', 'JWT');
+        Route::put('/', UsersCommand::class, 'update', 'JWT');
+        Route::delete('/', UsersCommand::class, 'delete', 'JWT');
         Route::post('/login/', UsersCommand::class, 'login');
     }
 );
 /* Routing table for a History model */
-Route::get('/history/', HistoryCommand::class, 'select');
+Route::get('/history/', HistoryCommand::class, 'select', 'JWT');
