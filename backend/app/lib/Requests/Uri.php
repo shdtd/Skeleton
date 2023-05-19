@@ -56,6 +56,17 @@ trait Uri
      */
     protected function initURI(): void
     {
+        $this->parseURI();
+        $this->parseHeaders();
+    }
+
+    /**
+     * Description
+     *
+     * @return void
+     */
+    protected function parseURI(): void
+    {
         $this->path       = strtok(Registry::instance()->getRequestUri(), '?');
         $this->parameters = array_merge($this->parameters, $_REQUEST);
         $inputMixed       = file_get_contents('php://input');
@@ -71,6 +82,18 @@ trait Uri
                     $inputUrlEncode
                 );
             }
+        }
+    }
+
+    /**
+     * Description
+     *
+     * @return void
+     */
+    protected function parseHeaders(): void
+    {
+        if (isset($_SERVER['HTTP_AUTHORIZATION']) === true) {
+            $this->parameters['Authorization'] = $_SERVER['HTTP_AUTHORIZATION'];
         }
     }
 

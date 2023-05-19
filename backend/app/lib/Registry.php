@@ -16,7 +16,6 @@ declare(strict_types=1);
 
 namespace Libraries;
 
-use Command\UsersCommand;
 use Libraries\Controllers\AppController;
 use Libraries\DataMapper\ModelCollection;
 use Libraries\DataMapper\ModelMapper;
@@ -440,7 +439,7 @@ class Registry
     }
 
     /**
-     * Access class
+     * Access control
      *
      * @return object
      */
@@ -455,7 +454,7 @@ class Registry
                  */
                 public function lock(): void
                 {
-                    if (UsersCommand::apiCheckToken() === false) {
+                    if (JWTAuth::checkToken() === false) {
                         die('Access denied');
                     }
                 }

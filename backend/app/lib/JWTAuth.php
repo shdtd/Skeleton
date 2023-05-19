@@ -109,4 +109,44 @@ class JWTAuth
 
         return $payload;
     }
+
+    /**
+     * 'CheckToken' function is check a token.
+     *
+     * @return boolean
+     */
+    public static function checkToken(): bool
+    {
+        $reg     = Registry::instance();
+        $jwtAuth = new JWTAuth();
+        $jwt     = $reg->getRequest()->getParameters()->get('Authorization');
+        if (empty($jwt) === true) {
+            return false;
+        }
+
+        $payload = $jwtAuth->decodeJWT($jwt);
+
+        if (($payload instanceof \stdClass) === false) {
+            return false;
+        }
+
+        $user = $reg->getUserMapper()->findByID($payload->data->id);
+
+        if (($user instanceof Model) === false) {
+            return false;
+        }
+
+        if ($payload->iss === 'Skeleton'
+            && $payload->nbf < time()
+            && $payload->exp > time()
+            && $user->get('email') === $payload->aud
+            && $user->get('email') === $payload->data->email
+            && $user->get('firstname') === $payload->data->firstname
+            && $user->get('lastname') === $payload->data->lastname
+        ) {
+                return true;
+        }
+
+        return false;
+    }
 }
