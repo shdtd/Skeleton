@@ -56,12 +56,14 @@ class Route
      * @param string $path    HTTP URL path.
      * @param string $command Command class name.
      * @param string $action  Name method of command class.
+     * @param string $lock    Auth method.
      */
     public function __construct(
         protected string $method,
         protected string $path,
         protected string $command,
-        protected string $action
+        protected string $action,
+        protected string $lock
     ) {
         $this->init();
     }

@@ -24,6 +24,7 @@ use Command\ItemsCommand;
 use Command\NewsCommand;
 use Command\UsersCommand;
 use Libraries\Facades\Route;
+use Libraries\JWTAuth;
 
 Route::group(
     'v1',
@@ -33,7 +34,7 @@ Route::group(
     }
 );
 
-Route::get('/', IndexCommand::class, 'index');
+Route::get('/', IndexCommand::class, 'index', 'JWT');
 Route::get('/<one>/<two>/<three>/', IndexCommand::class, 'query');
 Route::get('/none/', IndexCommand::class, 'index');
 Route::get('/none/<index>/', IndexCommand::class, 'two');

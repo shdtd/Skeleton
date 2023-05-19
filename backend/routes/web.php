@@ -26,7 +26,7 @@ use Command\ItemsCommand;
 //     Route::get('top', ArticlesCommand::class, 'articles_top');
 // });
 
-Route::get('/', IndexCommand::class, 'index');
+Route::get('/', IndexCommand::class, 'index', 'JWT');
 Route::get('/<one>/<two>/<three>/', IndexCommand::class, 'index');
 Route::get('/none/', IndexCommand::class, 'index');
 Route::get('/none/<index>/', IndexCommand::class, 'index');

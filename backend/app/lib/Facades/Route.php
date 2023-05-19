@@ -17,6 +17,8 @@ declare(strict_types=1);
 
 namespace Libraries\Facades;
 
+use Libraries\Route\Router;
+
 /**
  * Routes class
  * Description
@@ -29,6 +31,14 @@ namespace Libraries\Facades;
  */
 class Route extends Facade
 {
+
+    /**
+     * Instanse
+     *
+     * @var Router $instance
+     */
+    protected static Router $instance;
+
     /**
      * Description
      *
@@ -36,6 +46,10 @@ class Route extends Facade
      */
     protected static function getInstance(): object
     {
-        return new \Libraries\Route\Router();
+        if (isset(self::$instance) === false) {
+            self::$instance = new Router();
+        }
+
+        return self::$instance;
     }
 }

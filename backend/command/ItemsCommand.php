@@ -127,7 +127,11 @@ class ItemsCommand extends CommandController
      */
     public function apiCreate(): void
     {
-        /* For staff only 😼 */
+        /**
+         * For staff only 😼
+         *
+         * Set here or in routes
+         */
         $this->reg->getAccess()->lock();
 
         $data = $this->validate();
@@ -162,7 +166,11 @@ class ItemsCommand extends CommandController
      */
     public function apiUpdate(): void
     {
-        /* For staff only 😼 */
+        /**
+         * For staff only 😼
+         *
+         * Set here or in routes
+         */
         $this->reg->getAccess()->lock();
 
         $data = $this->validate();
@@ -198,7 +206,11 @@ class ItemsCommand extends CommandController
      */
     public function apiDelete(): void
     {
-        /* For staff only 😼 */
+        /**
+         * For staff only 😼
+         *
+         * Set here or in routes
+         */
         $this->reg->getAccess()->lock();
 
         $id = (int) $this->params->get('id');

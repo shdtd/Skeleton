@@ -65,13 +65,13 @@ class ApplicationHelper
      */
     public function init(): void
     {
+        $this->setupOptions();
+
         if (preg_match('~(^/api$)|(^/api/)~', $this->reg->getRequestUri()) === 1) {
             $request = new ApiRequest();
         } else {
             $request = new WebRequest();
         }
-
-        $this->setupOptions();
     }
 
     /**

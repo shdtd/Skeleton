@@ -118,7 +118,7 @@ abstract class Request
      *
      * @return string
      */
-    public function getFeedbackString(string $separator = '\n'): string
+    public function getFeedbackString(string $separator = "\n"): string
     {
         return implode($separator, $this->feedback);
     }
