@@ -115,7 +115,7 @@ class JWTAuth
      *
      * @return boolean
      */
-    public static function checkToken(): bool
+    public function checkToken(): bool
     {
         $reg     = Registry::instance();
         $jwtAuth = new JWTAuth();

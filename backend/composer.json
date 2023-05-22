@@ -1,10 +1,10 @@
 {
     "require": {
-    	"php": "^8.2",
-    	"ext-fileinfo": "*",
-    	"ext-intl": "*",
-    	"ext-json": "*",
-    	"ext-mbstring": "*",
+        "php": "^8.2",
+        "ext-fileinfo": "*",
+        "ext-intl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
         "smarty/smarty": "^4.3",
         "firebase/php-jwt": "^6.5"
     },
@@ -22,10 +22,10 @@
         "phpstan/phpstan": "^1.10"
     },
     "scripts": {
-    	"test": [
-    		"vendor/bin/phpcs",
-			"vendor/bin/phpstan",
-			"vendor/bin/phpunit --colors=always"
-    	]
+        "test": [
+            "vendor/bin/phpcs",
+            "vendor/bin/phpstan",
+            "vendor/bin/phpunit --colors=always"
+        ]
     }
 }

@@ -67,6 +67,11 @@ class ApplicationHelper
     {
         $this->setupOptions();
 
+        /* For a PHPUnit tests */
+        if ($this->reg->tryRequest() === true) {
+            return;
+        }
+
         if (preg_match('~(^/api$)|(^/api/)~', $this->reg->getRequestUri()) === 1) {
             $request = new ApiRequest();
         } else {
@@ -95,16 +100,17 @@ class ApplicationHelper
         $this->reg->setConfig($config);
         /* Parsing the [database] section */
         $database = new Config($options['database']);
-        $dsn      = $database->get('driver') .
-                    ':host=' . $database->get('dbhost') .
-                    ';port=' . $database->get('dbport') .
-                    ';dbname=' . $database->get('dbname');
-        $pdo      = new \PDO(
-            $dsn,
+        $dsn      = sprintf(
+            '%s:host=%s;port=%s;dbname=%s;user=%s;password=%s',
+            $database->get('driver'),
+            $database->get('dbhost'),
+            $database->get('dbport'),
+            $database->get('dbname'),
             $database->get('dbuser'),
-            $database->get('dbpass'),
-            [\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION]
+            $database->get('dbpass')
         );
+        $pdo      = new \PDO($dsn);
+        $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         $this->reg->setPdo($pdo);
     }
 }

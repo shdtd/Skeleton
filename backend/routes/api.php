@@ -24,7 +24,6 @@ use Command\ItemsCommand;
 use Command\NewsCommand;
 use Command\UsersCommand;
 use Libraries\Facades\Route;
-use Libraries\JWTAuth;
 
 Route::group(
     'v1',
@@ -47,7 +46,7 @@ Route::get('/animal/fish/', IndexCommand::class, 'fish');
 Route::get('/article/<id>/', ArticleCommand::class, 'findByID');
 /* Routing table for a Articles model */
 Route::group(
-    'article',
+    'articles',
     function () {
         Route::get('/', ArticleCommand::class, 'select');
         Route::post('/', ArticleCommand::class, 'create', 'JWT');

@@ -69,7 +69,8 @@ class Router
     {
         $this->reg     = Registry::instance();
         $this->request = $this->reg->getRequest();
-        $this->isLogin = JWTAuth::checkToken();
+        $jwtAuth       = new JWTAuth();
+        $this->isLogin = $jwtAuth->checkToken();
     }
 
     /**

@@ -344,6 +344,20 @@ class Registry
     }
 
     /**
+     * Request
+     *
+     * @return boolean
+     */
+    public function tryRequest(): bool
+    {
+        if (isset($this->request) === true) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * Config
      *
      * @throws AppException Is not set "Config" before get.
@@ -454,7 +468,8 @@ class Registry
                  */
                 public function lock(): void
                 {
-                    if (JWTAuth::checkToken() === false) {
+                    $jwtAuth = new JWTAuth();
+                    if ($jwtAuth->checkToken() === false) {
                         die('Access denied');
                     }
                 }

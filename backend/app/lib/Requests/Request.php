@@ -56,9 +56,16 @@ abstract class Request
 
     /**
      * Constructor
+     *
+     * @param string $authorization Token for a PHPUnit tests.
      */
-    public function __construct()
+    public function __construct(string $authorization = null)
     {
+        /* For a PHPUnit tests */
+        if (isset($authorization) === true) {
+            $this->parameters['Authorization'] = $authorization;
+        }
+
         $reg = Registry::instance();
         $reg->setRequest($this);
         $this->initURI();
