@@ -3,5 +3,6 @@
 /phpstan.neon
 /phpcs.xml
 /.phpunit.result.cache
+/.phpactor.json
 /view/templates_c/*
 /view/cache/*
