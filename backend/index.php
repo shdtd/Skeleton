@@ -6,7 +6,7 @@
  * @file
  * Description
  *
- * @category Yoеё
+ * @category Skeleton
  * @package  Index.php
  * @author   SHDTD <sales@zazil.ru>
  * @license  https://opensource.org/license/mit/ MIT
