@@ -67,11 +67,6 @@ class ApplicationHelper
     {
         $this->setupOptions();
 
-        /* For a PHPUnit tests */
-        if ($this->reg->tryRequest() === true) {
-            return;
-        }
-
         if (preg_match('~(^/api$)|(^/api/)~', $this->reg->getRequestUri()) === 1) {
             $request = new ApiRequest();
         } else {
