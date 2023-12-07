@@ -22,16 +22,6 @@ use Libraries\Registry;
 use Libraries\Requests\Request;
 use Libraries\View;
 
-/**
- * CommandController class
- * Description
- *
- * @category Controllers
- * @package  CommandController
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 abstract class CommandController
 {
 

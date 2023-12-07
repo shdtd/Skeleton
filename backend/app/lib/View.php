@@ -19,16 +19,6 @@ namespace Libraries;
 
 use Smarty;
 
-/**
- * View class
- * Description
- *
- * @category Libraries
- * @package  View
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class View extends Smarty
 {
     /**

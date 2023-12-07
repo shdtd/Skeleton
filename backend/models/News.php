@@ -19,16 +19,6 @@ namespace Models;
 
 use Libraries\DataMapper\ModelMapper;
 
-/**
- * News class
- * Description
- *
- * @category Models
- * @package  News
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class News extends ModelMapper
 {
     /**

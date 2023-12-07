@@ -21,16 +21,6 @@ use Libraries\Controllers\CommandController;
 use Libraries\JWTAuth;
 use Models\Users;
 
-/**
- * UsersCommand class
- * Description
- *
- * @category Command
- * @package  UsersCommand
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class UsersCommand extends CommandController
 {
 

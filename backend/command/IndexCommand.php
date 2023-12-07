@@ -21,16 +21,6 @@ use Libraries\Controllers\CommandController;
 use Models\Article;
 use Models\News;
 
-/**
- * IndexCommand class
- * Description
- *
- * @category Command
- * @package  IndexCommand
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class IndexCommand extends CommandController
 {
 

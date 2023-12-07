@@ -19,16 +19,6 @@ namespace Models;
 
 use Libraries\DataMapper\ModelMapper;
 
-/**
- * History class
- * Description
- *
- * @category Models
- * @package  History
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class History extends ModelMapper
 {
     /**

@@ -17,16 +17,6 @@ declare(strict_types=1);
 
 namespace Libraries\DataMapper;
 
-/**
- * ModelModules trait
- * Description
- *
- * @category DataMapper
- * @package  ModelModules
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 trait ModelModules
 {
     /**

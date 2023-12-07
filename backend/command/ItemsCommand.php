@@ -21,16 +21,6 @@ use Libraries\Controllers\CommandController;
 use Libraries\DataMapper\ModelMapper;
 use Models\Items;
 
-/**
- * ItemsCommand class
- * Description
- *
- * @category Command
- * @package  ItemsCommand
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class ItemsCommand extends CommandController
 {
 

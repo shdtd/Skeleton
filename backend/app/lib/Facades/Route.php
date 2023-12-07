@@ -19,16 +19,6 @@ namespace Libraries\Facades;
 
 use Libraries\Route\Router;
 
-/**
- * Routes class
- * Description
- *
- * @category Facades
- * @package  Route
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class Route extends Facade
 {
 

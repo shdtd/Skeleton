@@ -21,16 +21,6 @@ use Libraries\Errors\AppException;
 use Libraries\Requests\ApiRequest;
 use Libraries\Requests\WebRequest;
 
-/**
- * ApplicationHelper class
- * Description
- *
- * @category Libraries
- * @package  ApplicationHelper
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class ApplicationHelper
 {
 

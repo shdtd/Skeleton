@@ -20,16 +20,6 @@ namespace Libraries\Route;
 use Libraries\Config;
 use Libraries\Registry;
 
-/**
- * RouteCollection class
- * Description
- *
- * @category AppRoute
- * @package  RouteCollection
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class RouteCollection
 {
 

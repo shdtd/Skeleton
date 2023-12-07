@@ -24,16 +24,6 @@ use Libraries\Route\RouteCollection;
 use Libraries\Requests\Request;
 use Models\Users;
 
-/**
- * Registry class
- * Description
- *
- * @category Libraries
- * @package  Registry
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class Registry
 {
 

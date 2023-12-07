@@ -22,16 +22,6 @@ use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 use Libraries\DataMapper\Model;
 
-/**
- * JWTAuth class
- * Description
- *
- * @category Libraries
- * @package  JWTAuth
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class JWTAuth
 {
 

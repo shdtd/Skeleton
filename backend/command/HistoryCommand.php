@@ -21,16 +21,6 @@ use Libraries\Controllers\CommandController;
 use Libraries\DataMapper\ModelMapper;
 use Models\History;
 
-/**
- * HistoryCommand class
- * Description
- *
- * @category Command
- * @package  HistoryCommand
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class HistoryCommand extends CommandController
 {
 

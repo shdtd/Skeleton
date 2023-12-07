@@ -19,16 +19,6 @@ namespace Command;
 
 use Libraries\Controllers\CommandController;
 
-/**
- * ErrorCommand class
- * Description
- *
- * @category Command
- * @package  ErrorCommand
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class ErrorCommand extends CommandController
 {
     /**

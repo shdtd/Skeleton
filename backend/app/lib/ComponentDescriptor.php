@@ -20,16 +20,6 @@ namespace Libraries;
 use Libraries\Controllers\CommandController;
 use Libraries\Errors\AppException;
 
-/**
- * ComponentDescriptor class
- * Description
- *
- * @category Libraries
- * @package  ComponentDescriptor
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class ComponentDescriptor
 {
 

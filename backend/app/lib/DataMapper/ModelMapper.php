@@ -17,16 +17,6 @@ namespace Libraries\DataMapper;
 
 use Libraries\Registry;
 
-/**
- * ModelMapper class
- * Description
- *
- * @category DataMapper
- * @package  ModelMapper
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 abstract class ModelMapper
 {
     use ModelModules;

@@ -20,16 +20,6 @@ namespace Libraries\Controllers;
 use Libraries\Registry;
 use Libraries\ApplicationHelper;
 
-/**
- * Controller class
- * Description
- *
- * @category Controllers
- * @package  Controller
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class Controller
 {
 

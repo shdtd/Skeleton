@@ -17,16 +17,6 @@ declare(strict_types=1);
 
 namespace Libraries\Requests;
 
-/**
- * ApiRequest class
- * Description
- *
- * @category Requests
- * @package  ApiRequest
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class ApiRequest extends Request
 {
     /**

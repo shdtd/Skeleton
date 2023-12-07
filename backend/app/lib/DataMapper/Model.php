@@ -17,16 +17,6 @@ declare(strict_types=1);
 
 namespace Libraries\DataMapper;
 
-/**
- * Model class
- * Description
- *
- * @category DataMapper
- * @package  Model
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class Model
 {
 

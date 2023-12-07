@@ -21,16 +21,6 @@ use Libraries\Config;
 use Libraries\Errors\AppException;
 use Libraries\Registry;
 
-/**
- * Uri trait
- * Description
- *
- * @category Requests
- * @package  Uri
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 trait Uri
 {
 

@@ -21,16 +21,6 @@ use Libraries\Controllers\CommandController;
 use Models\Article;
 use Models\News;
 
-/**
- * NewsCommand class
- * Description
- *
- * @category Command
- * @package  NewsCommand
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class NewsCommand extends CommandController
 {
 

@@ -20,16 +20,6 @@ namespace Command;
 use Libraries\Controllers\CommandController;
 use Models\Article;
 
-/**
- * ArticleCommand class
- * Description
- *
- * @category Command
- * @package  ArticleCommand
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class ArticleCommand extends CommandController
 {
 

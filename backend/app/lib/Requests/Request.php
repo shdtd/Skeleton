@@ -19,16 +19,6 @@ namespace Libraries\Requests;
 
 use Libraries\Registry;
 
-/**
- * Request class
- * Description
- *
- * @category Requests
- * @package  Request
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 abstract class Request
 {
     use Uri;

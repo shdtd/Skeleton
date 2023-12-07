@@ -19,16 +19,6 @@ namespace Libraries\Errors;
 
 use Exception;
 
-/**
- * AppException class
- * Description
- *
- * @category Errors
- * @package  AppException
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class AppException extends Exception
 {
 }

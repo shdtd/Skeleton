@@ -19,16 +19,6 @@ namespace Models;
 
 use Libraries\DataMapper\ModelMapper;
 
-/**
- * Article class
- * Description
- *
- * @category Models
- * @package  Article
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class Article extends ModelMapper
 {
     /**

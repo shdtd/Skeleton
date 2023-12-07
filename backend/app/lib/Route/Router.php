@@ -21,16 +21,6 @@ use Libraries\JWTAuth;
 use Libraries\Registry;
 use Libraries\Requests\Request;
 
-/**
- * Router class
- * Description
- *
- * @category AppRoute
- * @package  Router
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class Router
 {
 

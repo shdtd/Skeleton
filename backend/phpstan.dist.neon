@@ -1,9 +1,0 @@
-parameters:
-    level: 6
-    paths:
-        - .
-    excludePaths:
-        - vendor
-        - view
-    ignoreErrors:
-        - '~Call to an undefined static method Libraries\\Facades\\[a-zA-Z0-9:\\_]().~'

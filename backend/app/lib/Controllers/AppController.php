@@ -4,6 +4,7 @@
  * PHP version 8.2.5
  *
  * @file
+ * AppController class
  * Description
  *
  * @category Controllers
@@ -23,16 +24,6 @@ use Libraries\Errors\AppException;
 use Libraries\Registry;
 use Libraries\Requests\Request;
 
-/**
- * AppController class
- * Description
- *
- * @category Controllers
- * @package  AppController
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class AppController
 {
 

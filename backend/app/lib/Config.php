@@ -17,16 +17,6 @@ declare(strict_types=1);
 
 namespace Libraries;
 
-/**
- * Config class
- * Description
- *
- * @category Libraries
- * @package  Config
- * @author   SHDTD <sales@zazil.ru>
- * @license  https://opensource.org/license/mit/ MIT
- * @link     https://github.com/shdtd/Skeleton
- */
 class Config
 {
 
